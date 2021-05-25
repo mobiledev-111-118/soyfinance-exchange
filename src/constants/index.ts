@@ -25,7 +25,7 @@ export const ETH = new Token(
   'Binance-Peg Ethereum Token'
 )
 
-const CYT = new Token(ChainId.CLOTESTNET, "0x0fA3Aab74949a4F43261EB38E3c29E126CAF4864", 18, 'CYT', 'Test token')
+// const CYT = new Token(ChainId.CLOTESTNET, "0x0fA3Aab74949a4F43261EB38E3c29E126CAF4864", 18, 'CYT', 'Test token')
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
