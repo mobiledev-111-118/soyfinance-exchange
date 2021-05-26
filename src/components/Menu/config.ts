@@ -20,16 +20,16 @@ const config: MenuEntry[] = [
       },
     ],
   },
-  {
-    label: 'Farms',
-    icon: 'FarmIcon',
-    href: '/farms',
-  },
-  {
-    label: 'Pools',
-    icon: 'PoolIcon',
-    href: '/pools',
-  },
+  // {
+  //   label: 'Farms',
+  //   icon: 'FarmIcon',
+  //   href: '/farms',
+  // },
+  // {
+  //   label: 'Pools',
+  //   icon: 'PoolIcon',
+  //   href: '/pools',
+  // },
   // {
   //   label: 'Prediction',
   //   icon: 'PredictionsIcon',

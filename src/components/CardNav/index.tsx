@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ButtonMenu, ButtonMenuItem } from '@soy-libs/uikit'
@@ -19,7 +18,7 @@ function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
         <ButtonMenuItem id="pool-nav-link" to="/pool" as={Link}>
           {TranslateString(262, 'Liquidity')}
         </ButtonMenuItem>
-        <ButtonMenuItem
+        {/* <ButtonMenuItem
           id="pool-nav-link"
           as="a"
           href="https://www.callisto.org/en/bridge?utm_source=SoySwap"
@@ -27,7 +26,7 @@ function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
           rel="noreferrer noopener"
         >
           Bridge
-        </ButtonMenuItem>
+        </ButtonMenuItem> */}
       </ButtonMenu>
     </StyledNav>
   )
