@@ -37,7 +37,7 @@ const BodyWrapper = styled.div`
   overflow-x: hidden;
   z-index: 1;
   justify-content: center;
-  background-image: url('/images/group-soy.svg');
+  // background-image: url('/images/group-soy.svg');
   background-repeat: no-repeat;
   background-position: bottom 24px center;
   background-size: 90%;

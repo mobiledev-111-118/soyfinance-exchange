@@ -35,6 +35,7 @@ import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { PoolPriceBar } from './PoolPriceBar'
 import { ROUTER_ADDRESS } from '../../constants'
+import Container from 'components/Container'
 
 export default function AddLiquidity({
   match: {
@@ -288,7 +289,7 @@ export default function AddLiquidity({
   }, [onFieldAInput, txHash])
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <AddRemoveTabs adding />
@@ -446,6 +447,6 @@ export default function AddLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWCLO} pair={pair} />
         </AutoColumn>
       ) : null}
-    </>
+    </Container>
   )
 }

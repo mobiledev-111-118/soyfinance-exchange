@@ -40,6 +40,7 @@ import { useBurnActionHandlers, useDerivedBurnInfo, useBurnState } from '../../s
 
 import { Field } from '../../state/burn/actions'
 import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
+import Container from 'components/Container'
 
 const OutlineCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
@@ -444,7 +445,7 @@ export default function RemoveLiquidity({
   )
 
   return (
-    <>
+    <Container>
       <AppBody>
         <AddRemoveTabs adding={false} />
         <Wrapper>
@@ -678,6 +679,6 @@ export default function RemoveLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
       ) : null}
-    </>
+    </Container>
   )
 }

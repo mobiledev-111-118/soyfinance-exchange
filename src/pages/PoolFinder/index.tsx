@@ -17,6 +17,7 @@ import { currencyId } from 'utils/currencyId'
 import useI18n from 'hooks/useI18n'
 import AppBody from '../AppBody'
 import { Dots } from '../Pool/styleds'
+import Container from 'components/Container'
 
 enum Fields {
   TOKEN0 = 0,
@@ -80,7 +81,7 @@ export default function PoolFinder() {
   )
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <FindPoolTabs />
@@ -177,6 +178,6 @@ export default function PoolFinder() {
           />
         </CardBody>
       </AppBody>
-    </>
+    </Container>
   )
 }

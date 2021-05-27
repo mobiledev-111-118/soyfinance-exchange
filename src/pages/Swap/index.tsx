@@ -398,7 +398,7 @@ const Swap = () => {
                         setApprovalSubmitted(false) // reset 2 step UI for approvals
                         onSwitchTokens()
                       }}
-                      style={{ borderRadius: '50%' }}
+                      style={{ borderRadius: '50%', backgroundColor: theme.colors.iconBack }}
                       scale="sm"
                     >
                       <ArrowDownIcon color="primary" width="24px" />

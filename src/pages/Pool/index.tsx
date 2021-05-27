@@ -19,6 +19,7 @@ import { Dots } from 'components/swap/styleds'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
+import Container from 'components/Container'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -55,7 +56,7 @@ export default function Pool() {
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
 
   return (
-    <>
+    <Container>
       <CardNav activeIndex={1} />
       <AppBody>
         <PageHeader
@@ -120,6 +121,6 @@ export default function Pool() {
           </CardBody>
         </AutoColumn>
       </AppBody>
-    </>
+    </Container>
   )
 }
