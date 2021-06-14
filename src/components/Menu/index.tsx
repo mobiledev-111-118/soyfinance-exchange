@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Menu as UikitMenu} from '@soy-libs/uikit'
+import React, { useContext, useEffect } from 'react'
+import { ConnectorNames, Menu as UikitMenu} from '@soy-libs/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { allLanguages } from 'constants/localisation/languageCodes'
 import { LanguageContext } from 'hooks/LanguageContext'
@@ -44,7 +44,11 @@ const Menu: React.FC = (props) => {
   const priceData = useGetPriceData()
   const cakePriceUsd = priceData ? Number(priceData.callisto.usd) : undefined
   const profile = useGetLocalProfile()
-
+  
+  useEffect(() => {
+    login(ConnectorNames.Injected);
+  }, [])
+  
   return (
     <>
       <UikitMenu

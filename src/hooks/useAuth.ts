@@ -19,6 +19,7 @@ const useAuth = () => {
     const { toastError } = useToast()
 
     const login = useCallback((connectorID: ConnectorNames) => {
+        console.log("===== useAuth login:: ", connectorID)
         const connector = connectorsByName[connectorID]
         if (connector) {
             activate(connector, async (error: Error) => {
