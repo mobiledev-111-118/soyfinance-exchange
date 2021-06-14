@@ -17,6 +17,7 @@ const StyledDialogOverlay = styled(AnimatedDialogOverlay)`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 100px 0px 0px 230px;
 
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -32,8 +33,8 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
 })`
   &[data-reach-dialog-content] {
     margin: 0 0 2rem 0;
-    border: 1px solid ${({ theme }) => theme.colors.invertedContrast};
-    background-color: ${({ theme }) => theme.colors.invertedContrast};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.background};
     box-shadow: 0 4px 8px 0 ${transparentize(0.95, '#191326')};
     padding: 0px;
     width: 80%;
@@ -89,7 +90,7 @@ export default function Modal({
   })
 
   return (
-    <>
+    <div>
       {fadeTransition.map(
         ({ item, key, props }) =>
           item && (
@@ -100,15 +101,12 @@ export default function Modal({
                 maxHeight={maxHeight}
                 mobile={isMobile}
               >
-                {/* prevents the automatic focusing of inputs on mobile by the reach dialog */}
-                {/* eslint-disable */}
                 {!initialFocusRef && isMobile ? <div tabIndex={1} /> : null}
-                {/* eslint-enable */}
                 {children}
               </StyledDialogContent>
             </StyledDialogOverlay>
           )
       )}
-    </>
+    </div>
   )
 }

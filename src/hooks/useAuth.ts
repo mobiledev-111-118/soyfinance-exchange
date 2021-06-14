@@ -19,7 +19,6 @@ const useAuth = () => {
     const { toastError } = useToast()
 
     const login = useCallback((connectorID: ConnectorNames) => {
-        console.log("===== useAuth login:: ", connectorID)
         const connector = connectorsByName[connectorID]
         if (connector) {
             activate(connector, async (error: Error) => {
@@ -28,7 +27,7 @@ const useAuth = () => {
                     if (hasSetup) {
                         activate(connector)
                     }
-                    // toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
+                    toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
                 } else {
                     window.localStorage.removeItem(connectorLocalStorageKey)
                     if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {

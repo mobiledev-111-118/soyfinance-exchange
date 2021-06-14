@@ -10,7 +10,6 @@
   "logoURI": "localhost:3000/images/clo.png",
   "keywords": ["soyswap", "default"],
   "tokens": [
-    
     {
       "name": "DIMW",
       "symbol": "DIMW",

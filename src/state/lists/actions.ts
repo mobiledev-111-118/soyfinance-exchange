@@ -16,3 +16,7 @@ export const addList = createAction<string>('lists/addList')
 export const removeList = createAction<string>('lists/removeList')
 export const selectList = createAction<string>('lists/selectList')
 export const rejectVersionUpdate = createAction<Version>('lists/rejectVersionUpdate')
+
+// select which lists to search across from loaded lists
+export const enableList = createAction<string>('lists/enableList')
+export const disableList = createAction<string>('lists/disableList')

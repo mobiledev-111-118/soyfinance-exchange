@@ -39,6 +39,52 @@ export function getCallistoScanLink(chainId: ChainId, data: string, type: 'trans
   }
 }
 
+
+const builders = {
+  closcan: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = `https://${chainName ? `${chainName}.` : ''}explorer.callisto.network`
+    switch (type) {
+      case 'transaction': {
+        return `${prefix}/tx/${data}/internal-transactions`
+      }
+      case 'token': {
+        return `${prefix}/token/${data}/token-transfers`
+      }
+      case 'address':
+      default: {
+        return `${prefix}/address/${data}/contracts`
+      }
+    }
+  },
+}
+
+interface ChainObject {
+  [chainId: number]: {
+    chainName: string
+    builder: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => string
+  }
+}
+
+const chains: ChainObject = {
+  [ChainId.MAINNET]: {
+    chainName: '',
+    builder: builders.closcan
+  },
+  [ChainId.CLOTESTNET]: {
+    chainName: 'testnet-',
+    builder: builders.closcan
+  },
+}
+
+export function getExplorerLink(
+  chainId: ChainId,
+  data: string,
+  type: 'transaction' | 'token' | 'address' | 'block'
+): string {
+  const chain = chains[chainId]
+  return chain.builder(chain.chainName, data, type)
+}
+
 // shorten the checksummed version of the input address to have 0x + 4 characters at start and end
 export function shortenAddress(address: string, chars = 4): string {
   const parsed = isAddress(address)

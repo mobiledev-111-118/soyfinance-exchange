@@ -18,3 +18,7 @@ export const LightCard = styled(Card)`
 export const GreyCard = styled(Card)`
   background-color: ${({ theme }) => theme.colors.tertiary};
 `
+
+export const LightGreyCard = styled(Card)`
+  background-color: ${({ theme }) => theme.colors.tertiary};
+`

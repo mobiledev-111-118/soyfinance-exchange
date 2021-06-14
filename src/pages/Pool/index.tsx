@@ -25,7 +25,6 @@ export default function Pool() {
   const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
   const TranslateString = useI18n()
-
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
   const tokenPairsWithLiquidityTokens = useMemo(
